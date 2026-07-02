@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #060b1a;
+  color: #e8eaed;
+}
+
+/* ====== 标题渐变光泽 ====== */
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-shimmer {
+  background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 25%, #818cf8 50%, #c4b5fd 75%, #6366f1 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ====== 网格背景 ====== */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ====== Hero 浮动光球 ====== */
+@keyframes float-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, 10px) scale(0.95); }
+}
+@keyframes float-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, -15px) scale(0.95); }
+  66% { transform: translate(20px, -30px) scale(1.05); }
+}
+@keyframes float-orb-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, 25px) scale(1.08); }
+}
+.hero-orb-1 { animation: float-orb-1 8s ease-in-out infinite; }
+.hero-orb-2 { animation: float-orb-2 10s ease-in-out infinite; }
+.hero-orb-3 { animation: float-orb-3 7s ease-in-out infinite; }
+
+/* ====== 脉冲边框 ====== */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(99, 102, 241, 0.2); }
+  50% { border-color: rgba(99, 102, 241, 0.5); }
+}
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* ====== 进度条填充 ====== */
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+.animate-progress {
+  animation: progress-fill 0.6s ease-out forwards;
+}
+
+/* ====== 卡片发光 hover ====== */
+.card-glow {
+  transition: all 0.3s ease;
+}
+.card-glow:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.08), 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ====== 关键数据高亮 ====== */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.15); }
+  50% { box-shadow: 0 0 25px rgba(99, 102, 241, 0.3); }
+}
+.stat-highlight {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+@keyframes glow-pulse-emerald {
+  0%, 100% { box-shadow: 0 0 15px rgba(52, 211, 153, 0.15); }
+  50% { box-shadow: 0 0 25px rgba(52, 211, 153, 0.3); }
+}
+.stat-highlight-emerald {
+  animation: glow-pulse-emerald 3s ease-in-out infinite;
+}
+
+/* ====== 渐变文字工具类 ====== */
+.text-gradient-indigo {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-amber {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ====== 滚动条美化 ====== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* ====== 淡入动画 ====== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* ====== 结果区高度展开 ====== */
+@keyframes expand-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-expand-in {
+  animation: expand-in 0.4s ease-out forwards;
+}
