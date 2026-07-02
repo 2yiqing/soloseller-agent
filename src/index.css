@@ -47,7 +47,7 @@ body {
 @keyframes float-orb-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(30px, -20px) scale(1.05); }
-  50% { transform: translate(-20px, 10px) scale(0.95); }
+  66% { transform: translate(-20px, 10px) scale(0.95); }
 }
 @keyframes float-orb-2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
